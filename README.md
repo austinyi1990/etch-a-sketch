@@ -2,7 +2,7 @@
 
 Basic web application made using HTML, CSS, JavaScript, and JQuery.
 
-Preview: https://rawgit.com/austinyi1990/etch-a-sketch/master/index.html
+**Preview:** https://rawgit.com/austinyi1990/etch-a-sketch/master/index.html
 
 ### Options
 
