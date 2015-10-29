@@ -2,7 +2,6 @@ $(document).ready(function() {
 	var gridSize = 16;
 	var container = $("#container");
 	var checkbox = $("input:checkbox");
-	var loadingWrapper = $("#loading-wrapper")
 	var lastButton = "set-default";
 	var squares;
 
@@ -98,8 +97,12 @@ $(document).ready(function() {
 			if(whichButton == "clear"){
 				whichButton = lastButton;
 			}
+			else if(whichButton == "default"){
+				gridSize = 16;
+				lastButton = whichButton;
+			}
 			else{
-				gridSize = prompt("Please enter the size of your grid (0<x<129)");
+				gridSize = prompt("Please enter the size of your grid (0 < x < 129)");
 				
 				//Throw prompt if not a number, < 1, > 128, or a decimal
 				while(gridSize != null && (isNaN(gridSize) ||gridSize < 1 || gridSize > 128 || gridSize % 1 != 0)){
@@ -114,22 +117,19 @@ $(document).ready(function() {
 
 				lastButton = whichButton;
 			}
+			createGrid(gridSize);
 
 			switch(whichButton) {
-				case "set-default":
-					createGrid(gridSize);
+				case "default":
 					drawDefault();
 					break;
 				case "random":
-					createGrid(gridSize);
 					drawRandom();
 					break;
 				case "incremental":
-					createGrid(gridSize);
 					drawIncremental();
 					break;
 				case "trailing":
-					createGrid(gridSize);
 					drawTrailing();
 					break;
 			}

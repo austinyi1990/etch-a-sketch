@@ -7,13 +7,13 @@ ul {
 	padding: 0;
 }
 
-#top-container {
-	width: 1000px;
-}
-
 #header {
 	background-color: #000000;
 	height: 190px;
+}
+
+#top-container {
+	width: 1000px;
 }
 
 #container {
